@@ -5,7 +5,7 @@ Ask,fm is a question and answer network. After registration, the user fills out 
 # features :
 
 - login and signup.
-- remember me we logged in.
+- remember me when logged in.
 - ask questions to anyone (anonymously or openly).
 - prevent users from sending anonymous questions.
 - make a thread question to an exiting question.

@@ -16,8 +16,8 @@ Ask,fm is a question and answer network. After registration, the user fills out 
 
 # images :
 
-![example 1](https://github.com/AbdulrhmanSayedAli/AskFm/blob/main/1.png)
-![example 2](https://github.com/AbdulrhmanSayedAli/AskFm/blob/main/2.png)
-![example 3](https://github.com/AbdulrhmanSayedAli/AskFm/blob/main/3.png)
-![example 4](https://github.com/AbdulrhmanSayedAli/AskFm/blob/main/4.png)
-![example 5](https://github.com/AbdulrhmanSayedAli/AskFm/blob/main/5.png)
+![example 1](https://github.com/AbdulrhmanSayedAli/AskFm/blob/master/images/1.png)
+![example 2](https://github.com/AbdulrhmanSayedAli/AskFm/blob/master/images/2.png)
+![example 3](https://github.com/AbdulrhmanSayedAli/AskFm/blob/master/images/3.png)
+![example 4](https://github.com/AbdulrhmanSayedAli/AskFm/blob/master/images/4.png)
+![example 5](https://github.com/AbdulrhmanSayedAli/AskFm/blob/master/images/5.png)

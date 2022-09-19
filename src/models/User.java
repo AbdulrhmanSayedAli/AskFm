@@ -1,6 +1,6 @@
 package models;
 
-import engine.IDGenerator;
+import managers.IDGenerator;
 
 public class User {
     int Id;

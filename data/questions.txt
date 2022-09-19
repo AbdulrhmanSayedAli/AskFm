@@ -1,4 +1,0 @@
-1 2 roctes7 1 ahmd -1 0;do you need help?;no thanks
-2 2 roctes7 1 ahmd 1 1;I think  you need help; 
-4 3 noor 1 ahmd 1 0;do you both need help ?; 
-6 2 roctes7 3 noor -1 0;hiiiiiii; 

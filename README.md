@@ -12,8 +12,6 @@ Ask,fm is a question and answer network. After registration, the user fills out 
 - see all questions in the feed.
 - answer a question or delete a question.
 
-## note : you can delete the data folder and all the initial data(users and questions) will be deleted.
-
 # images :
 
 ![example 1](https://github.com/AbdulrhmanSayedAli/AskFm/blob/master/images/1.png)

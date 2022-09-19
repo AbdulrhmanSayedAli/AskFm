@@ -12,6 +12,10 @@ Ask,fm is a question and answer network. After registration, the user fills out 
 - see all questions in the feed.
 - answer a question or delete a question.
 
+## note :
+
+the data folder is git ignored it will be automatically created with empty data when you run the app for the first time.
+
 # images :
 
 ![example 1](https://github.com/AbdulrhmanSayedAli/AskFm/blob/master/images/1.png)

@@ -4,6 +4,7 @@ package askfm.pages.authentication;
 import askfm.managers.ProfileManager;
 import askfm.engine.Engine;
 import askfm.engine.Page;
+import askfm.managers.EmailManager;
 import java.util.ArrayList;
 import askfm.models.User;
 
@@ -51,7 +52,10 @@ public class SignUp extends Page {
             if(isEmailUsed(data.get(1))){
                 changeContent("<html><body><h2>sign up</h2><p>your email is already in use</p><p style=\"color:blue\">click 3 to go back.</p></body></html>");
                 setGoBackEvents();
-            }else {
+            }else if (!EmailManager.validate(data.get(1))) {
+                changeContent("<html><body><h2>sign up</h2><p>your email is not valid please enter a valid email</p><p style=\"color:blue\">click 3 to go back.</p></body></html>");
+                setGoBackEvents();
+            } else {
                 User newUser = User.CreateUser(data.get(0), data.get(1), data.get(2),data.get(3).equals("1"));
                 ProfileManager.signIn(newUser);
                 Engine.restart();

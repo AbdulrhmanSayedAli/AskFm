@@ -101,7 +101,6 @@ public class FileManager {
         }
     }
     
-    
     public static FileWriter appender(String fileName, boolean tryAgain , String defaultValue) {
         try {
             return new FileWriter(FolderName + "/" + fileName, true);

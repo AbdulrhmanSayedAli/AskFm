@@ -33,7 +33,7 @@ public class AnswerQuestion extends Page {
                     return;
                 }
 
-                Engine.changeText("<html><body><h2>answer a question</h2><p>enter the answer</p></body></html>");
+                changeContent("<html><body><h2>answer a question</h2><p>enter the answer</p></body></html>");
                 Engine.openTextField((String answer) -> {
                     QuestionManager.answerQuestion(Integer.parseInt(id), answer);
                     Engine.restart();

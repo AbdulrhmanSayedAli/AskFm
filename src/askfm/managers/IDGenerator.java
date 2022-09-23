@@ -13,7 +13,7 @@ public class IDGenerator {
     
     
     private static final String ID_FileName = "IDs.txt";
-    private static final String DeafultValue = "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0";
+    private static final String DeafultValue = "0 0 0 0 0";
     
     
     private static void increaseID(int Column){ 

@@ -1,8 +1,9 @@
 package askfm.models;
 
 import askfm.managers.IDGenerator;
+import java.io.Serializable;
 
-public class User{
+public class User implements Serializable{
     private int Id;
     private String name;
     private String email;

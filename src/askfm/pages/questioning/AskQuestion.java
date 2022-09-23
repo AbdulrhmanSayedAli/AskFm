@@ -36,7 +36,7 @@ public class AskQuestion extends Page {
         Engine.changeText(content);
         
         Engine.openTextField((String question)->{            
-             QuestionManager.writeQuestion(ProfileManager.getCurrentUser(), reciver, anonymous, question.replaceAll(";", ":").replaceAll("\n", " "), -1);
+             QuestionManager.writeQuestion(ProfileManager.getCurrentUser(), reciver, anonymous, question.replaceAll("\n", " "), -1);
              Engine.restart();       
         });
     }
@@ -47,7 +47,7 @@ public class AskQuestion extends Page {
         Engine.changeText(content);
         
         Engine.openTextField((String question)->{            
-             QuestionManager.writeQuestion(ProfileManager.getCurrentUser(), ProfileManager.getUser(head.getReciverID()), anonymous, question.replaceAll(";", ":").replaceAll("\n", " "), head.getId());
+             QuestionManager.writeQuestion(ProfileManager.getCurrentUser(), ProfileManager.getUser(head.getReciverID()), anonymous, question.replaceAll("\n", " "), head.getId());
              Engine.restart();       
         });
     }

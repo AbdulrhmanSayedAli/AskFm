@@ -35,7 +35,7 @@ public class SignUp extends Page {
     private void signUp (ArrayList<String> data){
         String message = "<html><body><h2>sign up</h2>";
         for (int i=0;i<data.size();i++)message+="<p>"+dataToEnter[i]+" : "+data.get(i)+"</p>";
-        if(data.size()<4) message+="<p style=\"color:blue\">enter your "+dataToEnter[data.size()]+" (all spaces will be replaced with / )</p>";
+        if(data.size()<4) message+="<p style=\"color:blue\">enter your "+dataToEnter[data.size()]+"</p>";
         message+="</body></html>";
         changeContent(message);
         
@@ -43,7 +43,7 @@ public class SignUp extends Page {
         if(data.size()<4)
         Engine.openTextField((String text) -> {
             if(data.size()<4||text.equals("0")||text.equals("1")){
-                 data.add(text.replaceAll(" ", "/"));
+                 data.add(text.replaceAll("\n", " "));
             }
            signUp(data);
         });

@@ -33,14 +33,14 @@ public class Login extends Page{
     private void login(ArrayList<String> data){
         String message = "<html><body><h2>login</h2>";
         for (int i=0;i<data.size();i++)message+="<p>"+dataToEnter[i]+" : "+data.get(i)+"</p>";
-        if(data.size()<2) message += "<p style=\"color:blue\">enter your "+dataToEnter[data.size()]+" (all spaces will be replaced with / )</p>";
+        if(data.size()<2) message += "<p style=\"color:blue\">enter your "+dataToEnter[data.size()]+"</p>";
         message+="</body></html>";
         changeContent(message);
         
         
         if(data.size()<2)
         Engine.openTextField((String text) -> {
-            data.add(text.replaceAll(" ", "/"));
+            data.add(text.replaceAll("\n"," "));
             login(data);
         });
         else {

@@ -16,9 +16,8 @@ public class QuestionManager {
         try {
             Question question = Question.createQuestion(text, sender.getName(), reciver.getName(), reciver.getId(), sender.getId(), isAnonymous,head," ");
             FileWriter appender = FileManager.appender(Questions_FileName, true);
-            String line = question.getId()+" "+question.getSendeID() + " " + question.getSenderName() +" " + question.getReciverID()+ " " + question.getReciverName()+" ";
-            line+= question.getHeadQuestionID()+" " +(question.IsAnonyumous()?"1":"0")+";"+question.getQuestion()+";"+question.getAnswer()+"\n";
-            appender.write(line);
+            String line = SerializationManager.toString(question);
+            appender.write(line+"\n");
             appender.close();
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -32,14 +31,11 @@ public class QuestionManager {
             Scanner reader = FileManager.reader(Questions_FileName, true);
 
             while (reader.hasNext()) {
-                String line = reader.nextLine();
-                if (Integer.parseInt(line.split(" ")[0]) == id) {
-                    String [] arr = line.split(";");
-                    arr[2]=answer;
-                    res+=arr[0]+";"+arr[1]+";"+arr[2]+"\n";
-                } else {
-                    res+=line + "\n";
+                Question question = (Question)SerializationManager.fromString(reader.nextLine());
+                if (question.getId() == id) {
+                   question.setAnswer(answer);
                 }
+                res+=SerializationManager.toString(question)+"\n";
             }    
             
             reader.close();
@@ -60,9 +56,9 @@ public class QuestionManager {
             Scanner reader = FileManager.reader(Questions_FileName, true);
 
             while (reader.hasNext()) {
-                String line = reader.nextLine();
-                if (Integer.parseInt(line.split(" ")[0]) != id && Integer.parseInt(line.split(" ")[5]) != id) {
-                    res += line + "\n";
+                Question question = (Question)SerializationManager.fromString(reader.nextLine());
+                if (question.getId() != id && question.getHeadQuestionID() != id) {
+                    res += SerializationManager.toString(question) + "\n";
                 }
             }    
             
@@ -79,6 +75,18 @@ public class QuestionManager {
     
     
     
+    public static ArrayList<Question> getAllQuestions(){
+        Scanner reader = FileManager.reader(Questions_FileName, true);
+        ArrayList<Question> res = new ArrayList<>();
+        
+        while(reader.hasNext()){
+            Question question = (Question)SerializationManager.fromString(reader.nextLine());
+            res.add(question);
+        }
+        return res;
+    }
+    
+    
     
     public static Question getQuestion(int id){
         for(Question q : getAllQuestions()){
@@ -86,22 +94,6 @@ public class QuestionManager {
         }
         
         return null;
-    }
-    
-    
-    public static ArrayList<Question> getAllQuestions(){
-        Scanner reader = FileManager.reader(Questions_FileName, true);
-        ArrayList<Question> res = new ArrayList<>();
-        
-        while(reader.hasNext()){
-            String[] form = reader.nextLine().split(";");
-            String [] data = form[0].split(" ");
-            String ques = form[1];
-            String ans = form[2];
-            
-            res.add(new Question(Integer.parseInt(data[0]), ques, data[2], data[4], Integer.parseInt(data[3]), Integer.parseInt(data[1]), data[6].equals("1"), Integer.parseInt(data[5]),ans));
-        }
-        return res;
     }
     
     

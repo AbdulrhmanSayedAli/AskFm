@@ -1,9 +1,10 @@
 package askfm.models;
 
 import askfm.managers.IDGenerator;
+import java.io.Serializable;
 
 
-public class Question {
+public class Question implements Serializable{
    private int id;
    private String question;
    private String answer;
